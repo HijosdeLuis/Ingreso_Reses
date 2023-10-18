@@ -8,12 +8,12 @@ Public Class Class1
     Dim transa As SqlTransaction
     Dim resul2 As DataTable
     Dim tr As SqlTransaction
-    Dim hoy As Date = Now()
-    Public Sub Vertodos(ByRef dgv As DataGridView)
+    'Dim hoy As Date = Now()
+    Public Sub Vertodos(ByRef dgv As DataGridView, ByVal fecha As Date)
         libSql.AbrirConexion(resultado, mensaje)
 
         SQL = "SELECT  cod_barra, kilos FROM Ingreso_carne 
-where fecha ='" & hoy & "'
+where fecha ='" & fecha & "'
 order by id desc "
 
         libSql.Consulta(SQL, resul2, transa, resultado, mensaje)
@@ -49,7 +49,8 @@ order by id desc "
         Dgv.Rows.Clear()
     End Sub
     Public Function ValiCodBarra(Cod_barra)
-        SQL = "SELECT cod_barra FROM Ingreso_carne WHERE fecha = '" & hoy & "' "
+        Dim fecha As DateTime = Now()
+        SQL = "SELECT cod_barra FROM Ingreso_carne WHERE fecha = '" & fecha & "' "
         libSql.Consulta(SQL, resul2, transa, resultado, mensaje)
 
         If resul2.Rows.Count > 0 Then

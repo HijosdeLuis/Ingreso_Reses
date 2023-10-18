@@ -11,6 +11,7 @@ Public Class Form1
     Private RptReporteIngresos As Object
 
     Public Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
+        Dim fecha As DateTime = Now()
         Dim Cod_barra As String = Val(txtCodBarra.Text)
         Dim kilos As Integer = Val(txtKilos.Text)
 
@@ -21,13 +22,13 @@ Public Class Form1
 
 
                 val1.Grabar(Cod_barra, kilos)
-            val1.vaciar(DataGridView1)
-            val1.Vertodos(DataGridView1)
-            txtCodBarra.Text = ""
-            txtKilos.Text = ""
-            txtCodBarra.Focus()
+                val1.vaciar(DataGridView1)
+                val1.Vertodos(DataGridView1, fecha)
+                txtCodBarra.Text = ""
+                txtKilos.Text = ""
+                txtCodBarra.Focus()
 
-        End If
+            End If
 
 
         End If
@@ -37,19 +38,20 @@ Public Class Form1
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
-        val1.Vertodos(DataGridView1)
+        Dim fecha As DateTime = Now()
+        val1.Vertodos(DataGridView1, fecha)
     End Sub
 
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim hoy As Date = Now()
+        Dim fecha As Date = Now()
 
-        val2.MostrarReporte(hoy)
+        val2.MostrarReporte(fecha)
 
         Dim frmReporteingreso As New FormCristal
-        frmReporteingreso.Param1 = hoy
+        frmReporteingreso.Param1 = fecha
 
-        frmReporteingreso.MostrarReporte(hoy)
+        frmReporteingreso.MostrarReporte(fecha)
         frmReporteingreso.Show()
 
         'Dim da As SqlDataAdapter
@@ -86,7 +88,7 @@ Public Class Form1
         'End Try
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnConsultaPorFecha.Click
+    Private Sub BtnConsultaPorFecha_Click(sender As Object, e As EventArgs) Handles BtnConsultaPorFecha.Click
         Dim verFecha As DateTime = DateTimePicker1.Text
         val2.MostrarReporte(verFecha)
 
@@ -109,5 +111,18 @@ Public Class Form1
         If e.KeyCode = Keys.Enter Then
             btnGrabar_Click(sender, e)
         End If
+    End Sub
+
+
+
+    'Private Sub Button1_Click(sender As Object, e As EventArgs)
+    '    Dim fecha As DateTime = DateTimePicker1.Text
+    '    val1.Vertodos(DataGridView1, fecha)
+    'End Sub
+
+    Private Sub ConsultarSegunFecha_Click(sender As Object, e As EventArgs) Handles ConsultarSegunFecha.Click
+        Dim fecha As DateTime = DateTimePicker1.Text
+        val1.vaciar(DataGridView1)
+        val1.Vertodos(DataGridView1, fecha)
     End Sub
 End Class

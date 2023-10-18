@@ -38,6 +38,7 @@ Partial Class Form1
         Me.Label6 = New System.Windows.Forms.Label()
         Me.BtnConsultaPorFecha = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ConsultarSegunFecha = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -155,24 +156,34 @@ Partial Class Form1
         '
         'BtnConsultaPorFecha
         '
-        Me.BtnConsultaPorFecha.Location = New System.Drawing.Point(128, 104)
+        Me.BtnConsultaPorFecha.Location = New System.Drawing.Point(121, 217)
         Me.BtnConsultaPorFecha.Name = "BtnConsultaPorFecha"
         Me.BtnConsultaPorFecha.Size = New System.Drawing.Size(75, 23)
         Me.BtnConsultaPorFecha.TabIndex = 12
-        Me.BtnConsultaPorFecha.Text = "Consultar"
+        Me.BtnConsultaPorFecha.Text = "Reporte"
         Me.BtnConsultaPorFecha.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.ConsultarSegunFecha)
         Me.GroupBox1.Controls.Add(Me.BtnConsultaPorFecha)
         Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox1.Location = New System.Drawing.Point(615, 68)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(306, 209)
+        Me.GroupBox1.Size = New System.Drawing.Size(306, 316)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "GroupBox1"
+        '
+        'ConsultarSegunFecha
+        '
+        Me.ConsultarSegunFecha.Location = New System.Drawing.Point(121, 126)
+        Me.ConsultarSegunFecha.Name = "ConsultarSegunFecha"
+        Me.ConsultarSegunFecha.Size = New System.Drawing.Size(75, 23)
+        Me.ConsultarSegunFecha.TabIndex = 13
+        Me.ConsultarSegunFecha.Text = "Consultar"
+        Me.ConsultarSegunFecha.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -216,4 +227,5 @@ Partial Class Form1
     Friend WithEvents Label6 As Label
     Friend WithEvents BtnConsultaPorFecha As Button
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents ConsultarSegunFecha As Button
 End Class
