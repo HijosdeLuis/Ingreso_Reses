@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class Form1
+Public Class Pesaje
     Dim resultado As Boolean
     Dim mensaje As String
     Dim tr As SqlTransaction
@@ -9,9 +9,9 @@ Public Class Form1
     Public ds As DataSet
     Public dt As DataTable
     Private RptReporteIngresos As Object
-
+    Dim total As Integer
     Public Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
-        Dim fecha As DateTime = Now()
+        Dim fecha As Date = Now()
         Dim Cod_barra As String = Val(txtCodBarra.Text)
         Dim kilos As Integer = Val(txtKilos.Text)
 
@@ -23,11 +23,15 @@ Public Class Form1
 
                 val1.Grabar(Cod_barra, kilos)
                 val1.vaciar(DataGridView1)
-                val1.Vertodos(DataGridView1, fecha)
+                val1.Vertodos(DataGridView1, fecha, total)
+                SumaDelDia.Text = total
                 txtCodBarra.Text = ""
                 txtKilos.Text = ""
                 txtCodBarra.Focus()
-
+                TextBox1.Text = fecha.ToString("dd/MM/yyyy")
+            Else
+                txtCodBarra.Text = ""
+                txtKilos.Text = ""
             End If
 
 
@@ -38,8 +42,17 @@ Public Class Form1
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Dim fecha As DateTime = Now()
-        val1.Vertodos(DataGridView1, fecha)
+        txtCodBarra.Select()
+        Dim fecha As Date
+        If fecha = Nothing Then
+            fecha = Now()
+            TextBox1.Text = fecha.ToString("dd/MM/yyyy")
+        End If
+
+
+
+        val1.Vertodos(DataGridView1, fecha, total)
+        SumaDelDia.Text = total
     End Sub
 
 
@@ -89,7 +102,7 @@ Public Class Form1
     End Sub
 
     Private Sub BtnConsultaPorFecha_Click(sender As Object, e As EventArgs) Handles BtnConsultaPorFecha.Click
-        Dim verFecha As DateTime = DateTimePicker1.Text
+        Dim verFecha As Date = DateTimePicker1.Text
         val2.MostrarReporte(verFecha)
 
         Dim frmReporteingreso As New FormCristal
@@ -121,8 +134,20 @@ Public Class Form1
     'End Sub
 
     Private Sub ConsultarSegunFecha_Click(sender As Object, e As EventArgs) Handles ConsultarSegunFecha.Click
-        Dim fecha As DateTime = DateTimePicker1.Text
+        Dim fecha As Date = DateTimePicker1.Text
         val1.vaciar(DataGridView1)
-        val1.Vertodos(DataGridView1, fecha)
+        val1.Vertodos(DataGridView1, fecha, total)
+
+        SumaDelDia.Text = total
+
+        TextBox1.Text = fecha
+
+
     End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+
+    End Sub
+
+
 End Class

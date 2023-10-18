@@ -9,7 +9,7 @@ Public Class Class1
     Dim resul2 As DataTable
     Dim tr As SqlTransaction
     'Dim hoy As Date = Now()
-    Public Sub Vertodos(ByRef dgv As DataGridView, ByVal fecha As Date)
+    Public Sub Vertodos(ByRef dgv As DataGridView, ByVal fecha As Date, ByRef total As Integer)
         libSql.AbrirConexion(resultado, mensaje)
 
         SQL = "SELECT  cod_barra, kilos FROM Ingreso_carne 
@@ -22,14 +22,26 @@ order by id desc "
             For Each row As DataRow In resul2.Rows
                 dgv.Rows.Add(row.Item("cod_barra"), row.Item("kilos"))
             Next
-        Else
-            MessageBox.Show("No se conectó")
+
+        End If
+
+        SQL = "select SUM(kilos) as total 
+from [NotasDePedido].[dbo].[Ingreso_carne]
+where fecha = '" & fecha & "' "
+
+        libSql.Consulta(SQL, resul2, transa, resultado, mensaje)
+
+
+        If resul2.Rows.Count > 0 Then
+            total = Convert.ToInt32(resul2.Rows(0)("total"))
+
         End If
     End Sub
 
 
     Public Sub Grabar(ByVal Cod_barra As String, ByVal kilos As Integer)
         Dim fecha As Date = Now()
+
         Dim resul1 As String
 
         SQL = "INSERT INTO [Ingreso_carne]
@@ -56,7 +68,21 @@ order by id desc "
         If resul2.Rows.Count > 0 Then
             For Each row As DataRow In resul2.Rows
                 If row.Item("cod_barra").ToString() = Cod_barra.ToString() Then
-                    MessageBox.Show("No puede repetir codigo de barra   '" & Cod_barra & "' ya fue ingresado")
+
+
+                    Dim respuesta As String
+
+                    respuesta = MsgBox("Codigo '" & Cod_barra & "' ya ingresado  ¿Desea volver a ingresarlo ?", vbYesNo, "Confirmación")
+
+
+                    If respuesta = vbYes Then
+
+                        Return True
+                    Else
+
+                        Return False
+
+                    End If
                     Return False
                 End If
             Next
