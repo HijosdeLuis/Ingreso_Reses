@@ -10,34 +10,25 @@ Public Class Pesaje
     Public dt As DataTable
     Private RptReporteIngresos As Object
     Dim total As Integer
+
+
     Public Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
         Dim fecha As Date = Now()
         Dim Cod_barra As String = Val(txtCodBarra.Text)
         Dim kilos As Integer = Val(txtKilos.Text)
-
         If val1.Valiingre(Cod_barra, kilos) Then
-
             If val1.ValiCodBarra(Cod_barra) Then
-
-
-
                 val1.Grabar(Cod_barra, kilos)
                 val1.vaciar(DataGridView1)
                 val1.Vertodos(DataGridView1, fecha, total)
                 SumaDelDia.Text = total
-                txtCodBarra.Text = ""
-                txtKilos.Text = ""
+                val1.LipiarTextBox(txtCodBarra.Text, txtKilos.Text)
                 txtCodBarra.Focus()
                 TextBox1.Text = fecha.ToString("dd/MM/yyyy")
             Else
-                txtCodBarra.Text = ""
-                txtKilos.Text = ""
+                val1.LipiarTextBox(txtCodBarra.Text, txtKilos.Text)
             End If
-
-
         End If
-
-
     End Sub
 
 
@@ -48,15 +39,12 @@ Public Class Pesaje
             fecha = Now()
             TextBox1.Text = fecha.ToString("dd/MM/yyyy")
         End If
-
-
-
         val1.Vertodos(DataGridView1, fecha, total)
         SumaDelDia.Text = total
     End Sub
 
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub BtnReporteDelDia_Click(sender As Object, e As EventArgs) Handles BtnReporteDelDia.Click
         Dim fecha As Date = Now()
         val2.MostrarReporte(fecha)
         Dim frmReporteingreso As New FormCristal
@@ -74,13 +62,6 @@ Public Class Pesaje
         frmReporteingreso.Show()
     End Sub
 
-    Private Sub txtKilos_TextChanged(sender As Object, e As EventArgs) Handles txtKilos.TextChanged
-
-    End Sub
-
-    Private Sub txtKilos_DragDrop(sender As Object, e As DragEventArgs) Handles txtKilos.DragDrop
-
-    End Sub
 
     Private Sub txtKilos_KeyDown(sender As Object, e As KeyEventArgs) Handles txtKilos.KeyDown
         If e.KeyCode = Keys.Enter Then
@@ -90,25 +71,13 @@ Public Class Pesaje
 
 
 
-    'Private Sub Button1_Click(sender As Object, e As EventArgs)
-    '    Dim fecha As DateTime = DateTimePicker1.Text
-    '    val1.Vertodos(DataGridView1, fecha)
-    'End Sub
 
     Private Sub ConsultarSegunFecha_Click(sender As Object, e As EventArgs) Handles ConsultarSegunFecha.Click
         Dim fecha As Date = DateTimePicker1.Text
         val1.vaciar(DataGridView1)
         val1.Vertodos(DataGridView1, fecha, total)
-
         SumaDelDia.Text = total
-
         TextBox1.Text = fecha
-
-
-    End Sub
-
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-
     End Sub
 
 

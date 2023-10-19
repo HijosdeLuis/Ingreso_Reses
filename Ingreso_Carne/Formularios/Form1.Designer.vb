@@ -22,9 +22,9 @@ Partial Class Pesaje
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -32,7 +32,7 @@ Partial Class Pesaje
         Me.txtKilos = New System.Windows.Forms.TextBox()
         Me.btnGrabar = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.BtnReporteDelDia = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Cod_barra = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.kilos = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -114,30 +114,30 @@ Partial Class Pesaje
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Registro de ingreso de carne"
         '
-        'Button2
+        'BtnReporteDelDia
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(452, 130)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(112, 35)
-        Me.Button2.TabIndex = 7
-        Me.Button2.TabStop = False
-        Me.Button2.Text = "Reporte"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BtnReporteDelDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnReporteDelDia.Location = New System.Drawing.Point(452, 130)
+        Me.BtnReporteDelDia.Name = "BtnReporteDelDia"
+        Me.BtnReporteDelDia.Size = New System.Drawing.Size(112, 35)
+        Me.BtnReporteDelDia.TabIndex = 7
+        Me.BtnReporteDelDia.TabStop = False
+        Me.BtnReporteDelDia.Text = "Reporte"
+        Me.BtnReporteDelDia.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cod_barra, Me.kilos})
         Me.DataGridView1.Location = New System.Drawing.Point(767, 160)
@@ -150,8 +150,8 @@ Partial Class Pesaje
         'Cod_barra
         '
         Me.Cod_barra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Cod_barra.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Cod_barra.DefaultCellStyle = DataGridViewCellStyle2
         Me.Cod_barra.HeaderText = "CODIGO DE BARRA"
         Me.Cod_barra.MinimumWidth = 30
         Me.Cod_barra.Name = "Cod_barra"
@@ -160,8 +160,8 @@ Partial Class Pesaje
         '
         'kilos
         '
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kilos.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.kilos.DefaultCellStyle = DataGridViewCellStyle3
         Me.kilos.HeaderText = "KILOS"
         Me.kilos.Name = "kilos"
         Me.kilos.ReadOnly = True
@@ -215,10 +215,10 @@ Partial Class Pesaje
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(37, 47)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(93, 20)
+        Me.Label6.Size = New System.Drawing.Size(112, 24)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Elige Fecha" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
@@ -251,7 +251,7 @@ Partial Class Pesaje
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.txtKilos)
         Me.GroupBox2.Controls.Add(Me.btnGrabar)
-        Me.GroupBox2.Controls.Add(Me.Button2)
+        Me.GroupBox2.Controls.Add(Me.BtnReporteDelDia)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(48, 160)
         Me.GroupBox2.Name = "GroupBox2"
@@ -274,11 +274,11 @@ Partial Class Pesaje
         '
         Me.SumaDelDia.AutoSize = True
         Me.SumaDelDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SumaDelDia.Location = New System.Drawing.Point(858, 652)
+        Me.SumaDelDia.Location = New System.Drawing.Point(849, 653)
         Me.SumaDelDia.Name = "SumaDelDia"
-        Me.SumaDelDia.Size = New System.Drawing.Size(63, 20)
+        Me.SumaDelDia.Size = New System.Drawing.Size(140, 20)
         Me.SumaDelDia.TabIndex = 17
-        Me.SumaDelDia.Text = "Label8"
+        Me.SumaDelDia.Text = "MuestraLaSuma"
         '
         'Pesaje
         '
@@ -313,7 +313,7 @@ Partial Class Pesaje
     Friend WithEvents txtKilos As TextBox
     Friend WithEvents btnGrabar As Button
     Friend WithEvents Label4 As Label
-    Friend WithEvents Button2 As Button
+    Friend WithEvents BtnReporteDelDia As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label5 As Label
     Friend WithEvents DateTimePicker1 As DateTimePicker
