@@ -32,8 +32,17 @@ where fecha = '" & fecha & "' "
         libSql.Consulta(SQL, resul2, transa, resultado, mensaje)
 
 
-        If resul2.Rows.Count > 0 Then
-            total = Convert.ToInt32(resul2.Rows(0)("total"))
+        'If resul2 IsNot Nothing AndAlso resul2.Rows.Count > 0 AndAlso resul2.Rows(0)("total") IsNot DBNull.Value Then
+        '    total = Convert.ToInt32(resul2.Rows(0)("total"))
+        'Else
+
+        '    total = 0
+        'End If
+        If resul2 IsNot Nothing AndAlso resul2.Rows.Count > 0 AndAlso resul2.Rows(0)("total") IsNot DBNull.Value Then
+            total = resul2.Rows(0)("total")
+        Else
+
+            total = 0
 
         End If
     End Sub
