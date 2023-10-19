@@ -42,7 +42,7 @@ Partial Class Pesaje
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.ConsultarSegunFecha = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TxtMuestraLaFechaDeLaGrilla = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.SumaDelDia = New System.Windows.Forms.Label()
@@ -233,16 +233,16 @@ Partial Class Pesaje
         Me.ConsultarSegunFecha.Text = "Consultar"
         Me.ConsultarSegunFecha.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'TxtMuestraLaFechaDeLaGrilla
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(974, 103)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(142, 24)
-        Me.TextBox1.TabIndex = 14
-        Me.TextBox1.TabStop = False
+        Me.TxtMuestraLaFechaDeLaGrilla.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtMuestraLaFechaDeLaGrilla.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtMuestraLaFechaDeLaGrilla.Location = New System.Drawing.Point(974, 103)
+        Me.TxtMuestraLaFechaDeLaGrilla.Name = "TxtMuestraLaFechaDeLaGrilla"
+        Me.TxtMuestraLaFechaDeLaGrilla.ReadOnly = True
+        Me.TxtMuestraLaFechaDeLaGrilla.Size = New System.Drawing.Size(142, 24)
+        Me.TxtMuestraLaFechaDeLaGrilla.TabIndex = 14
+        Me.TxtMuestraLaFechaDeLaGrilla.TabStop = False
         '
         'GroupBox2
         '
@@ -288,7 +288,7 @@ Partial Class Pesaje
         Me.Controls.Add(Me.SumaDelDia)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TxtMuestraLaFechaDeLaGrilla)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.DataGridView1)
@@ -320,7 +320,7 @@ Partial Class Pesaje
     Friend WithEvents BtnConsultaPorFecha As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ConsultarSegunFecha As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtMuestraLaFechaDeLaGrilla As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Cod_barra As DataGridViewTextBoxColumn

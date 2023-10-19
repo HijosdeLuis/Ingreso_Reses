@@ -24,7 +24,7 @@ Public Class Pesaje
                 SumaDelDia.Text = total & " Kilos"
                 val1.LipiarTextBox(txtCodBarra.Text, txtKilos.Text)
                 txtCodBarra.Focus()
-                TextBox1.Text = fecha.ToString("dd/MM/yyyy")
+                TxtMuestraLaFechaDeLaGrilla.Text = fecha.ToString("dd/MM/yyyy")
             Else
                 val1.LipiarTextBox(txtCodBarra.Text, txtKilos.Text)
             End If
@@ -37,7 +37,7 @@ Public Class Pesaje
         Dim fecha As Date
         If fecha = Nothing Then
             fecha = Now()
-            TextBox1.Text = fecha.ToString("dd/MM/yyyy")
+            TxtMuestraLaFechaDeLaGrilla.Text = fecha.ToString("dd/MM/yyyy")
         End If
         val1.Vertodos(DataGridView1, fecha, total)
         SumaDelDia.Text = total & " Kilos"
@@ -77,7 +77,7 @@ Public Class Pesaje
         val1.vaciar(DataGridView1)
         val1.Vertodos(DataGridView1, fecha, total)
         SumaDelDia.Text = total & " Kilos"
-        TextBox1.Text = fecha
+        TxtMuestraLaFechaDeLaGrilla.Text = fecha
     End Sub
 
     Private Sub SumaDelDia_Click(sender As Object, e As EventArgs) Handles SumaDelDia.Click
