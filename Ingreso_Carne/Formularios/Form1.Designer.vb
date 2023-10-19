@@ -22,9 +22,9 @@ Partial Class Pesaje
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -108,7 +108,7 @@ Partial Class Pesaje
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(480, 43)
+        Me.Label4.Location = New System.Drawing.Point(441, 31)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(353, 29)
         Me.Label4.TabIndex = 6
@@ -130,17 +130,17 @@ Partial Class Pesaje
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cod_barra, Me.kilos})
-        Me.DataGridView1.Location = New System.Drawing.Point(743, 198)
+        Me.DataGridView1.Location = New System.Drawing.Point(767, 160)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(524, 457)
@@ -150,8 +150,8 @@ Partial Class Pesaje
         'Cod_barra
         '
         Me.Cod_barra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Cod_barra.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Cod_barra.DefaultCellStyle = DataGridViewCellStyle11
         Me.Cod_barra.HeaderText = "CODIGO DE BARRA"
         Me.Cod_barra.MinimumWidth = 30
         Me.Cod_barra.Name = "Cod_barra"
@@ -160,8 +160,8 @@ Partial Class Pesaje
         '
         'kilos
         '
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kilos.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.kilos.DefaultCellStyle = DataGridViewCellStyle12
         Me.kilos.HeaderText = "KILOS"
         Me.kilos.Name = "kilos"
         Me.kilos.ReadOnly = True
@@ -170,7 +170,7 @@ Partial Class Pesaje
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(738, 140)
+        Me.Label5.Location = New System.Drawing.Point(762, 102)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(197, 25)
         Me.Label5.TabIndex = 9
@@ -205,7 +205,7 @@ Partial Class Pesaje
         Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.GroupBox1.Location = New System.Drawing.Point(48, 439)
+        Me.GroupBox1.Location = New System.Drawing.Point(48, 401)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(624, 216)
         Me.GroupBox1.TabIndex = 13
@@ -237,7 +237,7 @@ Partial Class Pesaje
         '
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(950, 141)
+        Me.TextBox1.Location = New System.Drawing.Point(974, 103)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(142, 24)
@@ -253,7 +253,7 @@ Partial Class Pesaje
         Me.GroupBox2.Controls.Add(Me.btnGrabar)
         Me.GroupBox2.Controls.Add(Me.Button2)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(48, 140)
+        Me.GroupBox2.Location = New System.Drawing.Point(48, 160)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(624, 213)
         Me.GroupBox2.TabIndex = 15
@@ -264,7 +264,7 @@ Partial Class Pesaje
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(872, 690)
+        Me.Label7.Location = New System.Drawing.Point(775, 649)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(68, 24)
         Me.Label7.TabIndex = 16
@@ -273,9 +273,10 @@ Partial Class Pesaje
         'SumaDelDia
         '
         Me.SumaDelDia.AutoSize = True
-        Me.SumaDelDia.Location = New System.Drawing.Point(982, 698)
+        Me.SumaDelDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SumaDelDia.Location = New System.Drawing.Point(858, 652)
         Me.SumaDelDia.Name = "SumaDelDia"
-        Me.SumaDelDia.Size = New System.Drawing.Size(39, 13)
+        Me.SumaDelDia.Size = New System.Drawing.Size(63, 20)
         Me.SumaDelDia.TabIndex = 17
         Me.SumaDelDia.Text = "Label8"
         '

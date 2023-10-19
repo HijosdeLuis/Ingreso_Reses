@@ -58,56 +58,18 @@ Public Class Pesaje
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim fecha As Date = Now()
-
         val2.MostrarReporte(fecha)
-
         Dim frmReporteingreso As New FormCristal
         frmReporteingreso.Param1 = fecha
-
         frmReporteingreso.MostrarReporte(fecha)
         frmReporteingreso.Show()
-
-        'Dim da As SqlDataAdapter
-        'ds = New DataSet("DsReporteIngresos")
-        'Try
-
-        '    SQL = "exec dbo.ingresos_res '" & hoy & "'  "
-        '    'SQL = "exec TC_ReporteTareas '" & CENTROCOSTO & "'" ','" & FechaHasta & "'"
-        '    'ds.Clear()
-        '    da = New SqlDataAdapter(SQL, conn)
-        '    da.Fill(ds, "Tabla")
-        '    dt = ds.Tables("Tabla")
-
-        '    Dim objReporte As New RptReporteIngresos
-
-        '    objReporte.SetDataSource(dt)
-        '    objReporte.SetParameterValue("@FechaDesde", hoy)
-        '    'objReporte.SetParameterValue("@FechaHasta", FechaHasta)
-        '    'objReporte.SetParameterValue("@IdCentroCosto", CentroCosto)
-
-        '    'objReporte.PrintOptions.PrinterName = nomImpresora
-        '    'Imprimimos el reporte
-        '    'sale por impresora
-        '    'objReporte.PrintToPrinter(1, False, 0, 0)
-        '    'Instanciamos el origen del reporte
-
-        '    'sale por pantalla
-        '    Me.RptReporteIngresos.ReportSource = objReporte
-
-        'Catch ex As Exception
-        '    'Dim resp = GrabarLogOperaciones("ERROR N° " & Err.Number, "DESCRIPCION: " & Err.Description, "ERROR")
-        '    MessageBox.Show("Error N° " & Err.Number & ", DESCRIPCION: " & Err.Description,
-        '                "SISTEMAS AEC", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        'End Try
     End Sub
 
     Private Sub BtnConsultaPorFecha_Click(sender As Object, e As EventArgs) Handles BtnConsultaPorFecha.Click
         Dim verFecha As Date = DateTimePicker1.Text
         val2.MostrarReporte(verFecha)
-
         Dim frmReporteingreso As New FormCristal
         frmReporteingreso.Param1 = verFecha
-
         frmReporteingreso.MostrarReporte(verFecha)
         frmReporteingreso.Show()
     End Sub
