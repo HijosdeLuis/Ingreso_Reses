@@ -32,7 +32,7 @@ Public Class Pesaje
     End Sub
 
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Public Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
         txtCodBarra.Select()
         Dim fecha As Date
         If fecha = Nothing Then
@@ -44,7 +44,7 @@ Public Class Pesaje
     End Sub
 
 
-    Private Sub BtnReporteDelDia_Click(sender As Object, e As EventArgs) Handles BtnReporteDelDia.Click
+    Public Sub BtnReporteDelDia_Click(sender As Object, e As EventArgs) Handles BtnReporteDelDia.Click
         Dim fecha As Date = Now()
         val2.MostrarReporte(fecha)
         Dim frmReporteingreso As New FormCristal
@@ -53,7 +53,7 @@ Public Class Pesaje
         frmReporteingreso.Show()
     End Sub
 
-    Private Sub BtnConsultaPorFecha_Click(sender As Object, e As EventArgs) Handles BtnConsultaPorFecha.Click
+    Public Sub BtnConsultaPorFecha_Click(sender As Object, e As EventArgs) Handles BtnConsultaPorFecha.Click
         Dim verFecha As Date = DateTimePicker1.Text
         val2.MostrarReporte(verFecha)
         Dim frmReporteingreso As New FormCristal
@@ -63,7 +63,7 @@ Public Class Pesaje
     End Sub
 
 
-    Private Sub txtKilos_KeyDown(sender As Object, e As KeyEventArgs) Handles txtKilos.KeyDown
+    Public Sub txtKilos_KeyDown(sender As Object, e As KeyEventArgs) Handles txtKilos.KeyDown
         If e.KeyCode = Keys.Enter Then
             btnGrabar_Click(sender, e)
         End If
@@ -72,7 +72,7 @@ Public Class Pesaje
 
 
 
-    Private Sub ConsultarSegunFecha_Click(sender As Object, e As EventArgs) Handles ConsultarSegunFecha.Click
+    Public Sub ConsultarSegunFecha_Click(sender As Object, e As EventArgs) Handles ConsultarSegunFecha.Click
         Dim fecha As Date = DateTimePicker1.Text
         val1.vaciar(DataGridView1)
         val1.Vertodos(DataGridView1, fecha, total)

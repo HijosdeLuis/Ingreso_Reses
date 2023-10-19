@@ -67,11 +67,11 @@ where fecha = '" & fecha & "' "
                     Else
                         Return False
                     End If
-                    Return False
+                    'Return False
                 End If
             Next
         End If
-        Return True
+        'Return True
     End Function
 
 
