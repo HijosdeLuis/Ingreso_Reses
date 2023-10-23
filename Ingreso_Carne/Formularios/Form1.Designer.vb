@@ -22,33 +22,35 @@ Partial Class Pesaje
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtCodBarra = New System.Windows.Forms.TextBox()
         Me.txtKilos = New System.Windows.Forms.TextBox()
         Me.btnGrabar = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.LbTituloPrincipal = New System.Windows.Forms.Label()
         Me.BtnReporteDelDia = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Cod_barra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.kilos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.LbTituloSobreLaGrilla = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.BtnConsultaPorFecha = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.LbEligeLaFecha = New System.Windows.Forms.Label()
         Me.ConsultarSegunFecha = New System.Windows.Forms.Button()
         Me.TxtMuestraLaFechaDeLaGrilla = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.SumaDelDia = New System.Windows.Forms.Label()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cod_barra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.kilos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.borrar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -104,15 +106,15 @@ Partial Class Pesaje
         Me.btnGrabar.Text = "Guardar"
         Me.btnGrabar.UseVisualStyleBackColor = True
         '
-        'Label4
+        'LbTituloPrincipal
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(441, 31)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(353, 29)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Registro de ingreso de carne"
+        Me.LbTituloPrincipal.AutoSize = True
+        Me.LbTituloPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbTituloPrincipal.Location = New System.Drawing.Point(441, 31)
+        Me.LbTituloPrincipal.Name = "LbTituloPrincipal"
+        Me.LbTituloPrincipal.Size = New System.Drawing.Size(353, 29)
+        Me.LbTituloPrincipal.TabIndex = 6
+        Me.LbTituloPrincipal.Text = "Registro de ingreso de carne"
         '
         'BtnReporteDelDia
         '
@@ -125,56 +127,15 @@ Partial Class Pesaje
         Me.BtnReporteDelDia.Text = "Reporte"
         Me.BtnReporteDelDia.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'LbTituloSobreLaGrilla
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Cod_barra, Me.kilos})
-        Me.DataGridView1.Location = New System.Drawing.Point(767, 160)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(524, 457)
-        Me.DataGridView1.TabIndex = 8
-        Me.DataGridView1.TabStop = False
-        '
-        'Cod_barra
-        '
-        Me.Cod_barra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Cod_barra.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Cod_barra.HeaderText = "CODIGO DE BARRA"
-        Me.Cod_barra.MinimumWidth = 30
-        Me.Cod_barra.Name = "Cod_barra"
-        Me.Cod_barra.ReadOnly = True
-        Me.Cod_barra.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        '
-        'kilos
-        '
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kilos.DefaultCellStyle = DataGridViewCellStyle6
-        Me.kilos.HeaderText = "KILOS"
-        Me.kilos.Name = "kilos"
-        Me.kilos.ReadOnly = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(762, 102)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(197, 25)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Ingresos del Dia :"
+        Me.LbTituloSobreLaGrilla.AutoSize = True
+        Me.LbTituloSobreLaGrilla.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbTituloSobreLaGrilla.Location = New System.Drawing.Point(764, 124)
+        Me.LbTituloSobreLaGrilla.Name = "LbTituloSobreLaGrilla"
+        Me.LbTituloSobreLaGrilla.Size = New System.Drawing.Size(197, 25)
+        Me.LbTituloSobreLaGrilla.TabIndex = 9
+        Me.LbTituloSobreLaGrilla.Text = "Ingresos del Dia :"
         '
         'DateTimePicker1
         '
@@ -199,7 +160,7 @@ Partial Class Pesaje
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.LbEligeLaFecha)
         Me.GroupBox1.Controls.Add(Me.ConsultarSegunFecha)
         Me.GroupBox1.Controls.Add(Me.BtnConsultaPorFecha)
         Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
@@ -212,15 +173,15 @@ Partial Class Pesaje
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Consultar reportes por fecha"
         '
-        'Label6
+        'LbEligeLaFecha
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(37, 47)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(112, 24)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "Elige Fecha" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.LbEligeLaFecha.AutoSize = True
+        Me.LbEligeLaFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbEligeLaFecha.Location = New System.Drawing.Point(37, 47)
+        Me.LbEligeLaFecha.Name = "LbEligeLaFecha"
+        Me.LbEligeLaFecha.Size = New System.Drawing.Size(112, 24)
+        Me.LbEligeLaFecha.TabIndex = 14
+        Me.LbEligeLaFecha.Text = "Elige Fecha" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'ConsultarSegunFecha
         '
@@ -237,7 +198,8 @@ Partial Class Pesaje
         '
         Me.TxtMuestraLaFechaDeLaGrilla.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtMuestraLaFechaDeLaGrilla.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtMuestraLaFechaDeLaGrilla.Location = New System.Drawing.Point(974, 103)
+        Me.TxtMuestraLaFechaDeLaGrilla.Location = New System.Drawing.Point(985, 124)
+        Me.TxtMuestraLaFechaDeLaGrilla.MaximumSize = New System.Drawing.Size(1000, 800)
         Me.TxtMuestraLaFechaDeLaGrilla.Name = "TxtMuestraLaFechaDeLaGrilla"
         Me.TxtMuestraLaFechaDeLaGrilla.ReadOnly = True
         Me.TxtMuestraLaFechaDeLaGrilla.Size = New System.Drawing.Size(142, 24)
@@ -246,6 +208,7 @@ Partial Class Pesaje
         '
         'GroupBox2
         '
+        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.txtCodBarra)
         Me.GroupBox2.Controls.Add(Me.Label2)
@@ -280,27 +243,98 @@ Partial Class Pesaje
         Me.SumaDelDia.TabIndex = 17
         Me.SumaDelDia.Text = "MuestraLaSuma"
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.Cod_barra, Me.kilos, Me.borrar})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.Location = New System.Drawing.Point(728, 172)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridView1.RowTemplate.Height = 26
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(614, 445)
+        Me.DataGridView1.TabIndex = 18
+        '
+        'id
+        '
+        Me.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.id.FillWeight = 300.0!
+        Me.id.HeaderText = "Id"
+        Me.id.Name = "id"
+        Me.id.ReadOnly = True
+        Me.id.Visible = False
+        Me.id.Width = 56
+        '
+        'Cod_barra
+        '
+        Me.Cod_barra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Cod_barra.FillWeight = 333.0!
+        Me.Cod_barra.HeaderText = "Codigo de barra"
+        Me.Cod_barra.Name = "Cod_barra"
+        Me.Cod_barra.ReadOnly = True
+        Me.Cod_barra.Width = 255
+        '
+        'kilos
+        '
+        Me.kilos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.kilos.FillWeight = 145.736!
+        Me.kilos.HeaderText = "kilos"
+        Me.kilos.Name = "kilos"
+        Me.kilos.ReadOnly = True
+        Me.kilos.Width = 166
+        '
+        'borrar
+        '
+        Me.borrar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.borrar.FillWeight = 90.38114!
+        Me.borrar.HeaderText = "Borrar"
+        Me.borrar.Name = "borrar"
+        Me.borrar.ReadOnly = True
+        Me.borrar.Width = 150
+        '
         'Pesaje
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1336, 823)
+        Me.ClientSize = New System.Drawing.Size(1391, 781)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.SumaDelDia)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.TxtMuestraLaFechaDeLaGrilla)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.LbTituloSobreLaGrilla)
+        Me.Controls.Add(Me.LbTituloPrincipal)
         Me.Controls.Add(Me.Label3)
         Me.Name = "Pesaje"
         Me.Text = "Pesaje"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -312,19 +346,21 @@ Partial Class Pesaje
     Friend WithEvents txtCodBarra As TextBox
     Friend WithEvents txtKilos As TextBox
     Friend WithEvents btnGrabar As Button
-    Friend WithEvents Label4 As Label
+    Friend WithEvents LbTituloPrincipal As Label
     Friend WithEvents BtnReporteDelDia As Button
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Label5 As Label
+    Friend WithEvents LbTituloSobreLaGrilla As Label
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents BtnConsultaPorFecha As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ConsultarSegunFecha As Button
     Friend WithEvents TxtMuestraLaFechaDeLaGrilla As TextBox
-    Friend WithEvents Label6 As Label
+    Friend WithEvents LbEligeLaFecha As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Cod_barra As DataGridViewTextBoxColumn
-    Friend WithEvents kilos As DataGridViewTextBoxColumn
     Friend WithEvents Label7 As Label
     Friend WithEvents SumaDelDia As Label
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents id As DataGridViewTextBoxColumn
+    Friend WithEvents Cod_barra As DataGridViewTextBoxColumn
+    Friend WithEvents kilos As DataGridViewTextBoxColumn
+    Friend WithEvents borrar As DataGridViewTextBoxColumn
 End Class

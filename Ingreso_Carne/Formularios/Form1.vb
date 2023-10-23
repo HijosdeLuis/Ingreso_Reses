@@ -11,7 +11,6 @@ Public Class Pesaje
     Private RptReporteIngresos As Object
     Dim total As Integer
 
-
     Public Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
         Dim fecha As Date = Now()
         Dim Cod_barra As String = Val(txtCodBarra.Text)
@@ -43,7 +42,6 @@ Public Class Pesaje
         SumaDelDia.Text = total & " Kilos"
     End Sub
 
-
     Public Sub BtnReporteDelDia_Click(sender As Object, e As EventArgs) Handles BtnReporteDelDia.Click
         Dim fecha As Date = Now()
         val2.MostrarReporte(fecha)
@@ -62,15 +60,12 @@ Public Class Pesaje
         frmReporteingreso.Show()
     End Sub
 
-
     Public Sub txtKilos_KeyDown(sender As Object, e As KeyEventArgs) Handles txtKilos.KeyDown
         If e.KeyCode = Keys.Enter Then
             btnGrabar_Click(sender, e)
+            txtCodBarra.Select()
         End If
     End Sub
-
-
-
 
     Public Sub ConsultarSegunFecha_Click(sender As Object, e As EventArgs) Handles ConsultarSegunFecha.Click
         Dim fecha As Date = DateTimePicker1.Text
@@ -81,6 +76,62 @@ Public Class Pesaje
     End Sub
 
     Private Sub SumaDelDia_Click(sender As Object, e As EventArgs) Handles SumaDelDia.Click
+    End Sub
+
+    Private Sub txtCodBarra_TextChanged(sender As Object, e As EventArgs) Handles txtCodBarra.TextChanged
 
     End Sub
+
+    Private Sub txtCodBarra_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCodBarra.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            txtKilos.Select()
+        End If
+    End Sub
+
+
+
+
+    'Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+    '    If e.RowIndex >= 0 Then
+    '        Dim filaElegida As Integer = e.RowIndex
+    '        Dim id As String = DataGridView1.Rows(filaElegida).Cells("id").Value.ToString()
+    '        Dim cod_barras As String = DataGridView1.Rows(filaElegida).Cells("Cod_barra").Value.ToString()
+
+    '        Dim fecha As Date
+
+    '        Dim respuesta As DialogResult = MessageBox.Show("¿Desea eliminar el registro con código de barras " & cod_barras & "?", "ATENCIION !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+    '        If respuesta = DialogResult.Yes Then
+    '            val1.EliminarRegistro(id, fecha)
+    '            val1.vaciar(DataGridView1)
+    '            val1.Vertodos(DataGridView1, fecha, total)
+    '            SumaDelDia.Text = total & " Kilos"
+    '        End If
+    '    End If
+    'End Sub
+
+
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+
+        If e.RowIndex >= 0 AndAlso e.ColumnIndex = DataGridView1.Columns("Borrar").Index Then
+            Dim filaElegida As Integer = e.RowIndex
+            Dim id As String = DataGridView1.Rows(filaElegida).Cells("id").Value.ToString()
+            Dim cod_barras As String = DataGridView1.Rows(filaElegida).Cells("Cod_barra").Value.ToString()
+
+            Dim fecha As Date
+
+            Dim respuesta As DialogResult = MessageBox.Show("¿Desea eliminar el registro con código de barras " & cod_barras & "?", "ATENCIION !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+            If respuesta = DialogResult.Yes Then
+                val1.EliminarRegistro(id, fecha)
+                val1.vaciar(DataGridView1)
+                val1.Vertodos(DataGridView1, fecha, total)
+                SumaDelDia.Text = total & " Kilos"
+            End If
+        End If
+    End Sub
+
+
+
+
 End Class

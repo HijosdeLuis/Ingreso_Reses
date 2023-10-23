@@ -9,22 +9,23 @@ Public Class Class1
     'Dim hoy As Date = Now()
     Public Sub Vertodos(ByRef dgv As DataGridView, ByVal fecha As Date, ByRef total As Integer)
         libSql.AbrirConexion(resultado, mensaje)
-        SQL = "SELECT  cod_barra, kilos FROM Ingreso_carne 
-where fecha ='" & fecha & "'
-order by id desc "
+        SQL = "SELECT  cod_barra, kilos,id FROM Ingreso_carne 
+         where fecha ='" & fecha & "'
+         order by id desc "
         libSql.Consulta(SQL, resul2, transa, resultado, mensaje)
+
 
         If resul2.Rows.Count > 0 Then
             For Each row As DataRow In resul2.Rows
-                dgv.Rows.Add(row.Item("cod_barra"), row.Item("kilos"))
+                dgv.Rows.Add(row.Item("id"), row.Item("cod_barra"), row.Item("kilos"), "Borrar")
             Next
         Else
             dgv.Rows.Add("  -- NO HUBO REGISTROS EN LA FECHA--", " ")
         End If
-
         SQL = "select SUM(kilos) as total 
-from [NotasDePedido].[dbo].[Ingreso_carne]
-where fecha = '" & fecha & "' "
+        from [NotasDePedido].[dbo].[Ingreso_carne]
+        where fecha = '" & fecha & "' "
+
         libSql.Consulta(SQL, resul2, transa, resultado, mensaje)
         If resul2 IsNot Nothing AndAlso resul2.Rows.Count > 0 AndAlso resul2.Rows(0)("total") IsNot DBNull.Value Then
             total = resul2.Rows(0)("total")
@@ -41,7 +42,7 @@ where fecha = '" & fecha & "' "
            ([fecha]
            ,[cod_barra]
            ,[kilos])
-       VALUES
+            VALUES
            (
             '" & fecha & "'
            ,'" & Cod_barra & "'
@@ -61,7 +62,7 @@ where fecha = '" & fecha & "' "
             For Each row As DataRow In resul2.Rows
                 If row.Item("cod_barra").ToString() = Cod_barra.ToString() Then
                     Dim respuesta As String
-                    respuesta = MsgBox("Codigo '" & Cod_barra & "' ya ingresado  ¿Desea volver a ingresarlo ?", vbYesNo, "Confirmación")
+                    respuesta = MsgBox("Codigo '" & Cod_barra & "' ya ingresado  ¿Desea volver a ingresarlo ?", vbYesNo, " ATENCIÓN !!")
                     If respuesta = vbYes Then
                         Return True
                     Else
@@ -88,6 +89,26 @@ where fecha = '" & fecha & "' "
         txtCodBarra = ""
         txtKilos = ""
     End Sub
+    Public Sub EliminarRegistro(ByVal id As String, ByRef fecha As Date)
+        Dim resul3 As String
 
+
+
+        SQL = "SELECT fecha
+     FROM [NotasDePedido].[dbo].[Ingreso_carne] where id =  '" & id & "'"
+        libSql.Consulta(SQL, resul2, transa, resultado, mensaje)
+
+        If resul2.Rows.Count > 0 Then
+            fecha = Convert.ToDateTime(resul2.Rows(0)("fecha"))
+
+        End If
+
+        SQL = "DELETE FROM [NotasDePedido].[dbo].[Ingreso_carne]
+      WHERE id =  '" & id & "'   "
+
+        libSql.Ejecutar(SQL, False, resul3, tr, resultado, mensaje)
+
+
+    End Sub
 
 End Class
