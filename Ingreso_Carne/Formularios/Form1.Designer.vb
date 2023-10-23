@@ -44,10 +44,11 @@ Partial Class Pesaje
         Me.Label7 = New System.Windows.Forms.Label()
         Me.SumaDelDia = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cod_barra = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.kilos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.borrar = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.borrar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -266,7 +267,7 @@ Partial Class Pesaje
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView1.Location = New System.Drawing.Point(728, 172)
+        Me.DataGridView1.Location = New System.Drawing.Point(731, 172)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
@@ -276,6 +277,18 @@ Partial Class Pesaje
         Me.DataGridView1.Size = New System.Drawing.Size(614, 445)
         Me.DataGridView1.TabIndex = 18
         '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.DataGridViewImageColumn1.FillWeight = 90.38114!
+        Me.DataGridViewImageColumn1.HeaderText = "Borrar"
+        Me.DataGridViewImageColumn1.Image = Global.Ingreso_Carne.My.Resources.Resources.trash
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.ReadOnly = True
+        Me.DataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.DataGridViewImageColumn1.Width = 150
+        '
         'id
         '
         Me.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
@@ -283,6 +296,7 @@ Partial Class Pesaje
         Me.id.HeaderText = "Id"
         Me.id.Name = "id"
         Me.id.ReadOnly = True
+        Me.id.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.id.Visible = False
         Me.id.Width = 56
         '
@@ -309,8 +323,11 @@ Partial Class Pesaje
         Me.borrar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.borrar.FillWeight = 90.38114!
         Me.borrar.HeaderText = "Borrar"
+        Me.borrar.Image = Global.Ingreso_Carne.My.Resources.Resources.trash_2
         Me.borrar.Name = "borrar"
         Me.borrar.ReadOnly = True
+        Me.borrar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.borrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.borrar.Width = 150
         '
         'Pesaje
@@ -359,8 +376,9 @@ Partial Class Pesaje
     Friend WithEvents Label7 As Label
     Friend WithEvents SumaDelDia As Label
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents id As DataGridViewTextBoxColumn
     Friend WithEvents Cod_barra As DataGridViewTextBoxColumn
     Friend WithEvents kilos As DataGridViewTextBoxColumn
-    Friend WithEvents borrar As DataGridViewTextBoxColumn
+    Friend WithEvents borrar As DataGridViewImageColumn
 End Class

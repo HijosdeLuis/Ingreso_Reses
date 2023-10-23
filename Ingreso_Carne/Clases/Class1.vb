@@ -17,7 +17,8 @@ Public Class Class1
 
         If resul2.Rows.Count > 0 Then
             For Each row As DataRow In resul2.Rows
-                dgv.Rows.Add(row.Item("id"), row.Item("cod_barra"), row.Item("kilos"), "Borrar")
+                dgv.Rows.Add(row.Item("id"), row.Item("cod_barra"), row.Item("kilos"))
+
             Next
         Else
             dgv.Rows.Add("  -- NO HUBO REGISTROS EN LA FECHA--", " ")
