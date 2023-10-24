@@ -122,15 +122,18 @@ Public Class Pesaje
 
 
             If respuesta = DialogResult.Yes Then
-                    val1.EliminarRegistro(id, fecha)
-                    val1.vaciar(DataGridView1)
-                    val1.Vertodos(DataGridView1, fecha, total)
-                    SumaDelDia.Text = total & " Kilos"
-                End If
+                val1.EliminarRegistro(id, fecha)
+                val1.vaciar(DataGridView1)
+                val1.Vertodos(DataGridView1, fecha, total)
+                SumaDelDia.Text = total & " Kilos"
+                txtCodBarra.Select()
             Else
-                MessageBox.Show("ddddd")
-
+                txtCodBarra.Select()
             End If
+
+
+        End If
+
 
     End Sub
 
