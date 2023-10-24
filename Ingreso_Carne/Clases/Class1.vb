@@ -20,8 +20,7 @@ Public Class Class1
                 dgv.Rows.Add(row.Item("id"), row.Item("cod_barra"), row.Item("kilos"))
 
             Next
-        Else
-            dgv.Rows.Add("  -- NO HUBO REGISTROS EN LA FECHA--", " ")
+
         End If
         SQL = "select SUM(kilos) as total 
         from [NotasDePedido].[dbo].[Ingreso_carne]

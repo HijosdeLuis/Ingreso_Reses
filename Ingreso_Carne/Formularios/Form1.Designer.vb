@@ -267,12 +267,12 @@ Partial Class Pesaje
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView1.Location = New System.Drawing.Point(731, 172)
+        Me.DataGridView1.Location = New System.Drawing.Point(719, 172)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView1.RowTemplate.Height = 26
+        Me.DataGridView1.RowTemplate.Height = 37
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(614, 445)
         Me.DataGridView1.TabIndex = 18
@@ -323,7 +323,7 @@ Partial Class Pesaje
         Me.borrar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.borrar.FillWeight = 90.38114!
         Me.borrar.HeaderText = "Borrar"
-        Me.borrar.Image = Global.Ingreso_Carne.My.Resources.Resources.trash_2
+        Me.borrar.Image = Global.Ingreso_Carne.My.Resources.Resources.pngwing_com
         Me.borrar.Name = "borrar"
         Me.borrar.ReadOnly = True
         Me.borrar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]

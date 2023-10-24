@@ -79,7 +79,6 @@ Public Class Pesaje
     End Sub
 
     Private Sub txtCodBarra_TextChanged(sender As Object, e As EventArgs) Handles txtCodBarra.TextChanged
-
     End Sub
 
     Private Sub txtCodBarra_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCodBarra.KeyDown
@@ -112,26 +111,33 @@ Public Class Pesaje
 
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-
         If e.RowIndex >= 0 AndAlso e.ColumnIndex = DataGridView1.Columns("Borrar").Index Then
             Dim filaElegida As Integer = e.RowIndex
             Dim id As String = DataGridView1.Rows(filaElegida).Cells("id").Value.ToString()
             Dim cod_barras As String = DataGridView1.Rows(filaElegida).Cells("Cod_barra").Value.ToString()
-
             Dim fecha As Date
 
             Dim respuesta As DialogResult = MessageBox.Show("¿Desea eliminar el registro con código de barras " & cod_barras & "?", "ATENCIION !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
+
+
             If respuesta = DialogResult.Yes Then
-                val1.EliminarRegistro(id, fecha)
-                val1.vaciar(DataGridView1)
-                val1.Vertodos(DataGridView1, fecha, total)
-                SumaDelDia.Text = total & " Kilos"
+                    val1.EliminarRegistro(id, fecha)
+                    val1.vaciar(DataGridView1)
+                    val1.Vertodos(DataGridView1, fecha, total)
+                    SumaDelDia.Text = total & " Kilos"
+                End If
+            Else
+                MessageBox.Show("ddddd")
+
             End If
-        End If
+
     End Sub
 
 
 
 
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
 End Class
